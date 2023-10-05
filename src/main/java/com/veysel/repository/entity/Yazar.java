@@ -35,6 +35,7 @@ public class Yazar {
 
     private String biyografi;
 
-    private List <Kitap> kitaplari;
+
+//    private List <String> kitaplari;
 
 }

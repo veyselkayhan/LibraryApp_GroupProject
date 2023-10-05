@@ -51,7 +51,7 @@ public class Kitap {
 
     private boolean satistaMi;
 
-    private List<String> satinAlinanKitaplar;
+//    private List<String> satinAlinanKitaplar;
 
 
 }

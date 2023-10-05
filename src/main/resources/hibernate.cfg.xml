@@ -5,7 +5,7 @@
         <!-- Kullanılacak Veritabanı Sürücüsünün Adı       -->
         <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
         <!--  ConnectionString       -->
-        <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/JAVA11XDB</property>
+        <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/Java11LibraryAppDB</property>
         <!--  Kullanıcı Adı , yetkili kullanıcı      -->
         <property name="hibernate.connection.username">postgres</property>
         <!--  Şifre      -->
@@ -28,6 +28,8 @@
                 @Entity ile işaretlenmemiş hiç bir sınıfı kullanamaz.
         -->
         <mapping class="com.veysel.repository.entity.User"></mapping>
+        <mapping class="com.veysel.repository.entity.Kitap"></mapping>
+        <mapping class="com.veysel.repository.entity.Yazar"></mapping>
 
 
 
