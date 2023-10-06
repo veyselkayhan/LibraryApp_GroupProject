@@ -7,20 +7,9 @@ import com.veysel.repository.entity.Yazar;
 
 import java.util.List;
 
-public class YazarService   {
-
-    YazarRepository yazarRepository;
+public class YazarService extends MyFactoryService<Yazar,ID>{
 
     public YazarService() {
-        this.yazarRepository=new YazarRepository();
+        super(new Yazar());
     }
-
-    public Yazar save(Yazar yazar){
-        return yazarRepository.save(yazar);
-    }
-
-    public List<Yazar> saveAll(List<Yazar> yazarList){
-        return (List<Yazar>) yazarRepository.saveAll(yazarList);
-    }
-
 }

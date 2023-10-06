@@ -6,7 +6,9 @@ import com.veysel.util.HibernateUtility;
 import com.veysel.util.MyFactoryRepository;
 
 import javax.persistence.EntityManager;
+import javax.persistence.Query;
 import javax.persistence.TypedQuery;
+import java.util.List;
 import java.util.Optional;
 
 public class UserRepository extends MyFactoryRepository<User, ID> {
@@ -18,9 +20,16 @@ public class UserRepository extends MyFactoryRepository<User, ID> {
     }
 
     public Optional<User> findByTcKimlik(String tc) {
-        TypedQuery<User> userNative=entityManager.createNamedQuery("SELECT * FROM tbl_user WHERE tbl_user.tckimlik ='tc'",User.class);
+        User user=null;
+        String sql = "SELECT * FROM tbl_user WHERE tckimlik = :tcKimlik";
+        Query query = entityManager.createNativeQuery(sql, User.class);
+        query.setParameter("tcKimlik", tc);
+        try{
+            user = (User) query.getSingleResult();
 
-        //TODO doldurulacak
-        return  null;
+        }catch (Exception e){
+
+        }
+        return Optional.ofNullable(user);
     }
 }

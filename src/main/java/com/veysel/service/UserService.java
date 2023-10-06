@@ -8,22 +8,14 @@ import java.util.List;
 import java.util.Optional;
 
 
-public class UserService  {
+public class UserService extends MyFactoryService<User,Long> {
 
     UserRepository userRepository;
-
     public UserService() {
+        super(new User());
         this.userRepository=new UserRepository();
-    }
 
-    public User save(User user){
-        return userRepository.save(user);
     }
-
-    public List<User> saveAll(List<User> userList){
-        return (List<User>) userRepository.saveAll(userList);
-    }
-
     public Optional<User> findByTcKimlik(String tc) {
         return userRepository.findByTcKimlik(tc);
     }

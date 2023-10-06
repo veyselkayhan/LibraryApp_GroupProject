@@ -34,4 +34,8 @@ public class UserController  {
     public Optional<User> findByTcKimlik(String tc) {
         return userService.findByTcKimlik(tc);
     }
+
+    public void update(User user){
+         userService.update(user);
+    }
 }

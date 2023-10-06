@@ -12,6 +12,7 @@ import javax.persistence.TypedQuery;
 import java.util.List;
 import java.util.Optional;
 import java.util.Scanner;
+import java.util.stream.Collectors;
 
 
 public class Main {
@@ -36,8 +37,7 @@ public class Main {
 //        dataGenerator.verileriOlustur();
         UserController userController=new UserController();
 
-        System.out.println("Tc Kimlik Giriniz");
-        String tcKimlik=new Scanner(System.in).nextLine();
+       main.libraryApp();
 
 
 
@@ -56,6 +56,7 @@ public class Main {
             System.out.println("Hoşgeldiniz : "+user.get().getAd());
         }else {
             System.out.println("Hatali Giriş");
+            login();
         }
         return user;
     }
@@ -71,10 +72,33 @@ public class Main {
             switch (secim){
 
                 case 1:kitapSatinAl(user);
-                case 2:bakiyeYukle(User);
+                case 2:bakiyeYukle(user);
                 case 0:secim=1;
             }
         }while (secim!=0);
+
+    }
+
+    private void bakiyeYukle(Optional<User> user) {
+        System.out.println("Yüklemek İstediğiniz Tutar");
+        Double tutar=Double.parseDouble(sc.nextLine());
+        user.get().setParaMiktari(tutar+user.get().getParaMiktari());
+        userController.update(user.get());
+    }
+
+    private void kitapSatinAl(Optional<User> user) {
+        List<Kitap>kitapList=kitapController.findAll().stream().filter(kitap ->
+                kitap.isSatistaMi()==true).collect(Collectors.toList());
+
+        kitapList.forEach(System.out::println);
+        System.out.println("Hangi Kitabı Almak İstiyorsunuz");
+        Long secim=Long.parseLong(sc.nextLine());
+        Optional<Kitap> kitap =kitapController.findByID(secim);
+        if (kitap.isPresent()){
+            if()
+        }else {
+            System.out.println("Yanlış Kitap Idsi");
+        }
 
     }
 
@@ -83,12 +107,17 @@ public class Main {
         do{
             secim=mainMenu();
             switch (secim){
-                case 1:Optional<User> user = login();
+                case 1:{Optional<User> user = login();
                 if(user.isPresent()){
                     userMenu(user);
                 }
-                break;
-
+                break;}
+                case 2:{
+                    kitapController.findAll().forEach(System.out::println);
+                    break;
+                } case 4:{
+                    yazarController.findAll().forEach(System.out::println);
+                }
             }
         }while (secim!=0);
 
@@ -99,7 +128,7 @@ public class Main {
         System.out.println("### Kutuphaneye Hosgeldiniz! ####");
         System.out.println("1- Giris Yap");//tc kimlik alıcak
         System.out.println("2- Tum Kitaplari Goster");
-        System.out.println("3- Stoktaki Kitaplar");
+        System.out.println("3- Stoktaki Kitaplar");//query ile getir
         System.out.println("4- Yazarlari Goster");
         System.out.println("5- Kitap Ekle");
         System.out.println("6- Yazar Ekle");
@@ -110,6 +139,7 @@ public class Main {
         Integer secim = Integer.parseInt(sc.nextLine());
         return secim;
 
+        //TODO 8-2-3-4
     }
 
 

@@ -7,7 +7,7 @@ import com.veysel.repository.entity.User;
 
 import java.util.List;
 
-public class KitapService  extends  MyFactoryService<Kitap,ID>{
+public class KitapService  extends  MyFactoryService<Kitap,Long>{
 
     public KitapService() {
         super(new Kitap());

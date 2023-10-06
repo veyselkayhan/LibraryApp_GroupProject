@@ -22,5 +22,8 @@ public class YazarController {
         return (List<Yazar>) yazarService.saveAll(yazarList);
     }
 
+    public List<Yazar>findAll(){
+      return yazarService.findAll();
+    }
 
 }

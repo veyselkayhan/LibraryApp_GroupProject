@@ -4,6 +4,7 @@ import com.veysel.repository.entity.Kitap;
 import com.veysel.service.KitapService;
 
 import java.util.List;
+import java.util.Optional;
 
 public class KitapController {
     KitapService kitapService;
@@ -18,5 +19,13 @@ public class KitapController {
 
     public List<Kitap> saveAll(List<Kitap>kitapList){
         return (List<Kitap>) kitapService.saveAll(kitapList);
+    }
+
+    public List<Kitap>findAll(){
+        return kitapService.findAll();
+    }
+
+    public Optional<Kitap> findByID(Long id){
+        return kitapService.findByID(id);
     }
 }
