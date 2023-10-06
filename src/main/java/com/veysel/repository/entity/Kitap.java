@@ -24,6 +24,7 @@ public class Kitap {
     @Column(nullable = false)
     private String ad;
 
+
     @Column(nullable = false)
     private Long yazarId;
 
@@ -34,7 +35,7 @@ public class Kitap {
     @Column(nullable = false)
     private int sayfaSayisi;
 
-    @Column(nullable = false)
+
     private String yayinEvi;
 
     private LocalDate yayinTarihi;
@@ -51,7 +52,7 @@ public class Kitap {
 
     private boolean satistaMi;
 
-//    private List<String> satinAlinanKitaplar;
+
 
 
 }

@@ -35,7 +35,7 @@ public class Yazar {
 
     private String biyografi;
 
-
-//    private List <String> kitaplari;
+    @ElementCollection
+    private List <String> kitaplari;
 
 }
