@@ -1,6 +1,7 @@
 package com.veysel.controller;
 
 import com.veysel.repository.entity.Kitap;
+import com.veysel.repository.entity.User;
 import com.veysel.service.KitapService;
 
 import javax.persistence.TypedQuery;
@@ -41,6 +42,11 @@ public class KitapController {
 
     public List<Kitap> tureGoreKitapBul(){
         return kitapService.tureGoreKitapBul();
+    }
+
+
+    public void kitapSatınAl(User user) {
+        kitapService.findKıtapId(user);
     }
 
 

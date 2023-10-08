@@ -53,6 +53,4 @@ public class Kitap {
     private boolean satistaMi;
 
 
-
-
 }

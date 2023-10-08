@@ -117,4 +117,9 @@ public class KitapService  extends  MyFactoryService<Kitap,Long>{
         }
 
     }
+
+
+    public void findKıtapId(User user) {
+        kitapRepository.findKıtapId(user);
+    }
 }

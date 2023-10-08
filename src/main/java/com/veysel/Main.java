@@ -65,7 +65,7 @@ public class Main {
             secim = Integer.parseInt(sc.nextLine());
             switch (secim){
 
-                case 1:kitapSatinAl(user);break;
+                case 1:kitapController(user);break;
                 case 2:bakiyeYukle(user);break;
                 case 0:break;
             }
@@ -82,21 +82,7 @@ public class Main {
         userController.update(user.get());
     }
 
-    private void kitapSatinAl(Optional<User> user) {
-        List<Kitap>kitapList=kitapController.findAll().stream().filter(kitap ->
-                kitap.isSatistaMi()==true).collect(Collectors.toList());
 
-        kitapList.forEach(System.out::println);
-        System.out.println("Hangi Kitabı Almak İstiyorsunuz");
-        Long secim=Long.parseLong(sc.nextLine());
-        Optional<Kitap> kitap =kitapController.findByID(secim);
-        if (kitap.isPresent()){
-
-        }else {
-            System.out.println("Yanlış Kitap Idsi");
-        }
-
-    }
 
     public void libraryApp(){
         int secim=0;
