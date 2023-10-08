@@ -77,8 +77,8 @@ KitapService kitapService;
                 .adet(45)
                 .fiyat(50)
                 .sayfaSayisi(500)
-                .yazarId(yazarList.get(0).getId())
-                .yazarAdi(yazarList.get(0).getAd()+" " +yazarList.get(0).getSoyad())
+                .yazarId( yazarList.get(0).getId())
+                .yazarAdiSoyadi(yazarList.get(0).getAdSoyad())
                 .yayinEvi("İş bankası")
                 .satistaMi(true)
                 .build();
@@ -87,8 +87,8 @@ KitapService kitapService;
                 .ad("Yüzüklerin Efendisi")
                 .fiyat(50)
                 .tur("Bilim Kurgu")
-                .yazarAdi(yazarList.get(1).getAd()+" "+yazarList.get(1).getSoyad())
-                .yazarId(yazarList.get(1).getId())
+                .yazarAdiSoyadi(yazarList.get(1).getAdSoyad())
+                .yazarId( yazarList.get(1).getId())
                 .adet(45)
                 .isbn(45646L)
                 .sayfaSayisi(400)
@@ -100,7 +100,7 @@ KitapService kitapService;
                 .ad("Da Vincinin Şifresi")
                 .fiyat(65)
                 .tur("Gizem")
-                .yazarAdi(yazarList.get(2).getAd()+" "+yazarList.get(2).getSoyad())
+                .yazarAdiSoyadi(yazarList.get(2).getAdSoyad())
                 .yazarId(yazarList.get(2).getId())
                 .adet(45)
                 .isbn(456786L)
@@ -110,59 +110,59 @@ KitapService kitapService;
 
         Kitap kitap3 = Kitap.builder()
                 .satistaMi(true)
-                .tur("Gizem")
-                .yazarAdi(yazarList.get(1).getAd())
+                .tur("Fantastik")
+                .yazarAdiSoyadi(yazarList.get(1).getAdSoyad())
                 .adet(20)
                 .isbn(465231L)
                 .fiyat(2000)
                 .yayinEvi("İş bankası")
                 .sayfaSayisi(27)
-                .yazarId(yazarList.get(1).getId())
+                .yazarId( yazarList.get(1).getId())
                 .ad("Muhammet Hocanın Yolu")
                 .build();
         Kitap kitap4 = Kitap.builder()
                 .satistaMi(true)
-                .tur("Gizem")
-                .yazarAdi(yazarList.get(2).getAd())
+                .tur("Kişisel Gelişim")
+                .yazarAdiSoyadi(yazarList.get(2).getAdSoyad())
                 .adet(70)
                 .isbn(78895L)
                 .fiyat(70)
                 .yayinEvi("İş bankası")
                 .sayfaSayisi(700)
-                .yazarId(yazarList.get(2).getId())
+                .yazarId( yazarList.get(2).getId())
                 .ad("Kitapsızın Kitabı")
                 .build();
         Kitap kitap5 = Kitap.builder()
                 .satistaMi(true)
-                .tur("Gizem")
-                .yazarAdi(yazarList.get(4).getAd())
+                .tur("Kişisel Gelişim")
+                .yazarAdiSoyadi(yazarList.get(4).getAdSoyad())
                 .adet(30)
                 .isbn(645789L)
                 .fiyat(38)
                 .yayinEvi("İş bankası")
                 .sayfaSayisi(500)
-                .yazarId(yazarList.get(4).getId())
+                .yazarId( yazarList.get(4).getId())
                 .ad("Ali Tatilde")
                 .build();
         Kitap kitap6 = Kitap.builder()
-                .satistaMi(true)
-                .tur("Gizem")
-                .yazarAdi(yazarList.get(3).getAd())
-                .adet(15)
+                .satistaMi(false)
+                .tur("Fantastik")
+                .yazarAdiSoyadi(yazarList.get(3).getAdSoyad())
+                .adet(0)
                 .isbn(54875L)
                 .fiyat(47)
                 .yayinEvi("İş bankası")
                 .sayfaSayisi(87)
-                .yazarId(yazarList.get(3).getId())
-                .ad("Zeynep'in kitabı")
+                .yazarId( yazarList.get(3).getId())
+                .ad("Stoksuz Kitap")
                 .build();
 
         Kitap kitap7 = Kitap.builder()
                 .ad("Melekler ve Şeytanlar")
                 .fiyat(75)
-                .tur("Gizem")
-                .yazarAdi(yazarList.get(2).getAd()+" "+yazarList.get(2).getSoyad())
-                        .yazarId(yazarList.get(2).getId())
+                .tur("Macera")
+                .yazarAdiSoyadi(yazarList.get(2).getAdSoyad())
+                        .yazarId( yazarList.get(2).getId())
                         .adet(50)
                         .isbn(412678L)
                         .sayfaSayisi(250)
@@ -171,8 +171,8 @@ KitapService kitapService;
         Kitap kitap8=Kitap.builder()
                 .ad("Digital Kale")
                 .fiyat(65)
-                .tur("Gizem")
-                .yazarAdi(yazarList.get(2).getAd()+" "+yazarList.get(2).getSoyad())
+                .tur("Bilim Kurgu")
+                .yazarAdiSoyadi(yazarList.get(2).getAdSoyad())
                 .yazarId(yazarList.get(2).getId())
                 .adet(45)
                 .isbn(4567896L)
@@ -183,8 +183,8 @@ KitapService kitapService;
         Kitap kitap9=Kitap.builder()
                 .ad("Cehennem")
                 .fiyat(65)
-                .tur("Gizem")
-                .yazarAdi(yazarList.get(2).getAd()+" "+yazarList.get(2).getSoyad())
+                .tur("Macera")
+                .yazarAdiSoyadi(yazarList.get(2).getAdSoyad())
                 .yazarId(yazarList.get(2).getId())
                 .adet(45)
                 .isbn(45678916L)
@@ -201,8 +201,7 @@ KitapService kitapService;
 
     public List<Yazar>yazarOlustur(){
         Yazar yazar= Yazar.builder()
-                .ad("J.R.R")
-                .soyad("Tolkien")
+                .adSoyad("J.R.R Tolkien")
                 .ulke("Ingiliz")
                 .dogumTarihi(LocalDate.of(1850,5,14))
                 .olumTarihi(LocalDate.of(1950,7,4))
@@ -210,31 +209,28 @@ KitapService kitapService;
                 .build();
 
         Yazar yazar1= Yazar.builder()
-                .ad("J.K")
-                .soyad("Rowling")
+                .adSoyad("J.K Rowling")
                 .ulke("Ingiliz")
                 .dogumTarihi(LocalDate.of(1965,4,12))
                 .biyografi("Magic Word")
                 .build();
 
         Yazar yazar2 = Yazar.builder()
-                .ad("Dan")
-                .soyad("Brown")
+                .adSoyad("Dan Brown")
                 .ulke("Ingiliz")
                 .dogumTarihi(LocalDate.of(1970,4,23))
                 .build();
 
         Yazar yazar3=Yazar.builder()
-                .ad("Orhan")
-                .soyad("Pamuk")
+                .adSoyad("Orhan Pamuk")
+
                 .ulke("Turk")
                 .dogumTarihi(LocalDate.of(1940,5,23))
                 .biyografi("Nobel Odullu Turk Yazar")
                 .build();
 
         Yazar yazar4= Yazar.builder()
-                .ad("Suzanne")
-                .soyad("Collins")
+                .adSoyad("Suzanne Collins")
                 .ulke("Amerika")
                 .dogumTarihi(LocalDate.of(1980,4,8))
                 .biyografi("New Word")
@@ -256,8 +252,12 @@ KitapService kitapService;
        yazar2.setKitaplari(List.of(kitapList.get(4).getAd(),kitapList.get(5).getAd()));
        yazar3.setKitaplari(List.of(kitapList.get(6).getAd(),kitapList.get(7).getAd()));
        yazar4.setKitaplari(List.of(kitapList.get(8).getAd(),kitapList.get(9).getAd()));
+        yazarController.update(yazar1);
+        yazarController.update(yazar2);
+        yazarController.update(yazar3);
+        yazarController.update(yazar4);
+        yazarController.update(yazar);
 
-       yazarController.saveAll(List.of(yazar,yazar1,yazar2,yazar3,yazar4));
     }
 
     public void verileriOlustur() {

@@ -22,10 +22,9 @@ public class Yazar {
     long id;
 
     @Column(nullable = false)
-    private String ad;
+    private String adSoyad;
 
-    @Column(nullable = false)
-    private String soyad;
+
 
     private LocalDate dogumTarihi;
 

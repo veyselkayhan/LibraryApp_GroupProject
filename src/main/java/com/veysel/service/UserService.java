@@ -19,4 +19,8 @@ public class UserService extends MyFactoryService<User,Long> {
     public Optional<User> findByTcKimlik(String tc) {
         return userRepository.findByTcKimlik(tc);
     }
+
+    public User userSave() {
+        return userRepository.userSave();
+    }
 }

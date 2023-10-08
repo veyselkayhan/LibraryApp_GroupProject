@@ -26,4 +26,11 @@ public class YazarController {
       return yazarService.findAll();
     }
 
+    public void update(Yazar yazar){
+        yazarService.update(yazar);
+    }
+
+    public Yazar yazarEkle(){
+        return yazarService.yazarEkle();
+    }
 }

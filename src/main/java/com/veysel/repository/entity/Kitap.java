@@ -29,7 +29,7 @@ public class Kitap {
     private Long yazarId;
 
     @Column(nullable = false)
-    private String yazarAdi;
+    private String yazarAdiSoyadi;
 
     private String tur;
     @Column(nullable = false)
@@ -48,7 +48,7 @@ public class Kitap {
 
 //    eger deger yoksa 0 olacak
 
-    private int fiyat;
+    private double fiyat;
 
     private boolean satistaMi;
 

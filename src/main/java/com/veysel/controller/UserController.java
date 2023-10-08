@@ -5,11 +5,13 @@ import com.veysel.repository.entity.User;
 import com.veysel.service.MyFactoryService;
 import com.veysel.service.UserService;
 import com.veysel.util.HibernateUtility;
+import org.hibernate.query.criteria.internal.predicate.ExistsPredicate;
 
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 import java.util.List;
 import java.util.Optional;
+import java.util.Scanner;
 
 public class UserController  {
 
@@ -37,5 +39,11 @@ public class UserController  {
 
     public void update(User user){
          userService.update(user);
+    }
+
+    public User userSave(){
+
+           return userService.userSave();
+
     }
 }

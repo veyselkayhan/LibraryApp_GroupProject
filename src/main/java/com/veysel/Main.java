@@ -26,23 +26,17 @@ public class Main {
         this.kitapController=new KitapController();
         this.yazarController=new YazarController();
         this.userController=new UserController();
-
+        this.sc=new Scanner(System.in);
     }
 
     public static void main(String[] args) {
 
         Main main=new Main();
-
 //        DataGenerator dataGenerator= new DataGenerator();
 //        dataGenerator.verileriOlustur();
-        UserController userController=new UserController();
-
+//        UserController userController=new UserController();
+//
        main.libraryApp();
-
-
-
-
-
 
 
     }
@@ -71,18 +65,20 @@ public class Main {
             secim = Integer.parseInt(sc.nextLine());
             switch (secim){
 
-                case 1:kitapSatinAl(user);
-                case 2:bakiyeYukle(user);
-                case 0:secim=1;
+                case 1:kitapSatinAl(user);break;
+                case 2:bakiyeYukle(user);break;
+                case 0:break;
             }
         }while (secim!=0);
 
     }
 
     private void bakiyeYukle(Optional<User> user) {
-        System.out.println("Yüklemek İstediğiniz Tutar");
+        System.out.println(user.get().getParaMiktari()+" tl bulunmaltadır");
+        System.out.print("Yüklemek İstediğiniz Tutar :");
         Double tutar=Double.parseDouble(sc.nextLine());
         user.get().setParaMiktari(tutar+user.get().getParaMiktari());
+        System.out.println(user.get().getParaMiktari()+" tl bulunmaltadır");
         userController.update(user.get());
     }
 
@@ -95,7 +91,7 @@ public class Main {
         Long secim=Long.parseLong(sc.nextLine());
         Optional<Kitap> kitap =kitapController.findByID(secim);
         if (kitap.isPresent()){
-            if()
+
         }else {
             System.out.println("Yanlış Kitap Idsi");
         }
@@ -115,9 +111,31 @@ public class Main {
                 case 2:{
                     kitapController.findAll().forEach(System.out::println);
                     break;
-                } case 4:{
-                    yazarController.findAll().forEach(System.out::println);
                 }
+                case 3:{
+                    kitapController.BooksInStock().forEach(System.out::println);
+                   break;
+                }
+                case 4:{
+                    yazarController.findAll().forEach(System.out::println);
+                    break;
+                }
+                case 5:{
+                    kitapController.kitapSave();
+                    break;
+                }
+                case 6:{
+                    yazarController.yazarEkle();
+                    break;
+                }
+                case 7:{
+                    userController.userSave();
+                    break;
+                }
+                case 8:{
+                kitapController.tureGoreKitapBul().forEach(System.out::println);
+                }
+
             }
         }while (secim!=0);
 
@@ -138,7 +156,6 @@ public class Main {
         System.out.print("Secim yapiniz : ");
         Integer secim = Integer.parseInt(sc.nextLine());
         return secim;
-
         //TODO 8-2-3-4
     }
 
